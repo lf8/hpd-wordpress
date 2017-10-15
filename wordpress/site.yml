@@ -1,0 +1,11 @@
+---
+- name: InstalandoWP, Mysql, Nginx and php-fpm
+  hosts: web
+  become: yes
+  become_method: sudo
+  roles:
+  - base
+  - mysql
+  - nginx
+  - php-fpm
+  - wordpress

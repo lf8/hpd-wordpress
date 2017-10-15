@@ -1,0 +1,12 @@
+- name: "Instalando o nginx"
+  yum: pkg={{ item }} state=absent
+  with_items:
+  - nmap
+  - nginx
+  - php-fpm
+  - wordpress
+  notify: restart nginx
+
+- name: "Criar o arquivo index.html"
+  template: src=default.conf dest=/etc/nginx/conf.d/default.conf
+  notify: restart nginx

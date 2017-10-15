@@ -1,0 +1,12 @@
+---
+- name: Instalar libselinux-python
+  yum: name=libselinux-python state=present
+
+- name: Reload no ansible_facts
+  setup:
+
+- name: Instalar o Epel Copiar o Epel File
+  copy: src=epel.repo dest=/etc/yum.repos.d/epel.repo
+
+- name: Criar GPG key
+  copy: src=RPM-GPG-KEY-EPEL-7 dest=/etc/pki/rpm-gpg
